@@ -1,0 +1,19 @@
+server:
+  port: ${CUSTOMER_SERVICE_PORT:9091}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_URL:http://localhost:8761}/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+
+
+feign:
+    hystrix:
+        enabled: true
+
+spring:
+  application:
+    name: customer-service
